@@ -11,11 +11,15 @@ import pandas as pd
 # main Swiggy app. We pull more Swiggy reviews and keep only Instamart ones.
 APPS = {
     "Zepto":     {"pkg": "com.zeptoconsumerapp",    "count": 4000, "keywords": None},
-    "Blinkit":   {"pkg": "com.grofers.customerapp", "count": 4000, "keywords": None},
+    "Blinkit":   {"pkg": "com.grofers.customerapp", "count": 30000, "keywords": None},
     "Instamart": {"pkg": "in.swiggy.android",       "count": 40000,
                   "keywords": r"insta ?mart|grocer|vegetable|fruit|milk|dairy|atta|"
                               r"\begg|bread|onion|tomato|expired|rotten"},
 }
+
+# Every app is cut to the same window so the comparison is fair.
+# (Blinkit gets far more reviews per day than Zepto, so it needs a much bigger pull.)
+START_DATE = "2026-10-01"
 
 rows = []
 for name, cfg in APPS.items():
@@ -32,6 +36,10 @@ for name, cfg in APPS.items():
         "date": r["at"],
         "thumbs_up": r["thumbsUpCount"],
     } for r in data])
+    oldest = app_df.date.min()
+    app_df = app_df[app_df.date >= START_DATE]
+    if oldest > pd.Timestamp(START_DATE):
+        print(f"  WARNING: {name} only goes back to {oldest:%d %b} - raise its count")
     pulled = len(app_df)
     if cfg["keywords"]:
         app_df = app_df[app_df.text.fillna("").str.contains(cfg["keywords"], case=False)]

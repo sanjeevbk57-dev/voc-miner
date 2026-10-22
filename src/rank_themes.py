@@ -42,19 +42,37 @@ TOOL = {
     },
 }
 
+# Fixed theme list (a PM decision): keeps results stable across runs and is the
+# same list used to hand-label reviews for the eval.
+THEMES = {
+    "Missing or wrong items": "items missing from the order, or a different item sent",
+    "Order not delivered or cancelled": "order never arrived, or was cancelled after payment",
+    "Expired, rotten or poor quality": "expired, spoiled, rotten, fake or low-quality products",
+    "Damaged or leaking packaging": "torn bags, leaks, broken seals, melted or warm items",
+    "Late delivery": "slower than the promised time, wrong ETAs",
+    "Fees and charges": "delivery, handling, surge, platform or small-order fees",
+    "Prices and offers": "high prices, price changes, offers or cashback not working",
+    "Payment problems": "failed payments, double debits, cash on delivery unavailable",
+    "App, account or location": "app crashes, login, account blocked, area not serviceable, referral",
+    "Delivery partner behaviour": "rude or unresponsive delivery partners",
+    "Support and refunds": "ONLY when the main complaint is support itself or a refund, with no clearer root problem above",
+    "Generic complaint": "vague 'worst app' reviews with no specific problem",
+    "Off-topic": "restaurant food delivery, not groceries or quick commerce",
+}
+theme_list = "\n".join(f"- {name}: {desc}" for name, desc in THEMES.items())
+
 table = "\n".join(f"cluster {r.cluster} | {r.reviews} reviews | {r.label} | {r.summary}"
                   for r in labels.itertuples())
 prompt = (
     "Below are clusters of complaint reviews for Indian quick-commerce apps "
     "(Zepto, Blinkit, Swiggy Instamart).\n\n" + table + "\n\n"
-    "Group them into 8 to 12 themes based on the ROOT problem, meaning what actually "
-    "went wrong (for example missing items, expired or rotten products, fees, late "
-    "delivery). Most complaints also mention poor support or refunds; only put a "
-    "cluster in a support/refund theme if support itself is the main complaint. "
-    "If a cluster is about restaurant food delivery rather than groceries or "
-    "quick commerce, put it in a theme named exactly 'Off-topic'. "
-    "Every cluster id must appear in exactly one theme. "
-    "Respond only by calling the record_themes tool."
+    "Assign every cluster to exactly one of these themes, using the theme names "
+    "exactly as written:\n" + theme_list + "\n\n"
+    "Choose by the ROOT problem: what actually went wrong. Most complaints also say "
+    "support was unhelpful or a refund was denied; that alone does not make it "
+    "'Support and refunds'. If a cluster's label names a root problem (missing item, "
+    "expired product, damaged item, non-delivery), use that theme. "
+    "Respond only by calling the record_themes tool, with one entry per theme used."
 )
 msg = client.messages.create(model=MODEL, max_tokens=3000, tools=[TOOL],
                              messages=[{"role": "user", "content": prompt}])
@@ -65,8 +83,11 @@ if result is None:
 
 theme_of = {}
 for t in result["themes"]:
+    name = t["name"] if t["name"] in THEMES else "Other"
+    if name == "Other":
+        print(f"Note: Claude used an unknown theme '{t['name']}', put in 'Other'")
     for cid in t["cluster_ids"]:
-        theme_of.setdefault(int(cid), t["name"])
+        theme_of.setdefault(int(cid), name)
 missing = set(labels.cluster) - set(theme_of)
 for cid in missing:
     theme_of[cid] = "Other"
