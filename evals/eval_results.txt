@@ -1,0 +1,12 @@
+Eval set: 100 hand-labelled complaint reviews (Zepto + Blinkit)
+Theme match rate:          81%
+Support-failed agreement:  63%
+'Missing or wrong items': precision 91% (11 labelled by Claude), recall 71% (14 labelled by you)
+
+Most common disagreements (you -> Claude):
+  2 x  Generic complaint  ->  Support and refunds
+  2 x  Late delivery  ->  Generic complaint
+  2 x  Missing or wrong items  ->  Support and refunds
+  1 x  App, account or location  ->  Late delivery
+  1 x  Damaged or leaking packaging  ->  Expired, rotten or poor quality
+  1 x  Damaged or leaking packaging  ->  Off-topic
