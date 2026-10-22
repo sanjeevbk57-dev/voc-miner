@@ -1,50 +1,50 @@
 rid,theme,support_failed
 8999,Late delivery,False
-8067,Missing or wrong items,False
+8067,Missing or wrong items,True
 8263,Prices and offers,False
-220,Support and refunds,False
+220,Support and refunds,True
 5213,Late delivery,False
-86,"Expired, rotten or poor quality",False
-884,Missing or wrong items,False
-5889,Generic complaint,False
+86,"Expired, rotten or poor quality",True
+884,Missing or wrong items,True
+5889,Generic complaint,True
 12979,"Expired, rotten or poor quality",False
-200,Missing or wrong items,False
+200,Missing or wrong items,True
 1445,"App, account or location",False
 1470,Damaged or leaking packaging,False
-119,Delivery partner behaviour,False
+119,Delivery partner behaviour,True
 894,Generic complaint,False
-13678,Missing or wrong items,False
+13678,Missing or wrong items,True
 5769,Prices and offers,False
 1090,Fees and charges,False
 13190,Support and refunds,True
-10515,Damaged or leaking packaging,False
+10515,Damaged or leaking packaging,True
 551,Prices and offers,False
-7872,"Expired, rotten or poor quality",False
+7872,"Expired, rotten or poor quality",True
 9144,Generic complaint,False
 10411,"App, account or location",False
 227,"Expired, rotten or poor quality",False
 1664,Generic complaint,False
-1535,Delivery partner behaviour,False
-7114,Damaged or leaking packaging,False
+1535,Delivery partner behaviour,True
+7114,Damaged or leaking packaging,True
 4035,Fees and charges,False
 6201,"Expired, rotten or poor quality",False
 12417,Support and refunds,True
 421,"App, account or location",False
-476,"Expired, rotten or poor quality",False
+476,"Expired, rotten or poor quality",True
 1038,Prices and offers,False
 889,Prices and offers,False
-9726,"Expired, rotten or poor quality",False
-1496,"Expired, rotten or poor quality",False
+9726,"Expired, rotten or poor quality",True
+1496,"Expired, rotten or poor quality",True
 9785,Generic complaint,False
 262,Delivery partner behaviour,False
-4037,"Expired, rotten or poor quality",False
+4037,"Expired, rotten or poor quality",True
 991,"App, account or location",False
-11373,Missing or wrong items,False
-2152,Payment problems,False
+11373,Missing or wrong items,True
+2152,Payment problems,True
 106,"App, account or location",False
-3771,Late delivery,False
+3771,Late delivery,True
 104,Generic complaint,False
-643,"App, account or location",False
+643,"App, account or location",True
 1777,Off-topic,False
 4118,Fees and charges,False
 4130,Fees and charges,False
@@ -53,49 +53,49 @@ rid,theme,support_failed
 10071,Damaged or leaking packaging,False
 1197,Generic complaint,False
 135,Missing or wrong items,True
-2141,Late delivery,False
-8679,Damaged or leaking packaging,False
+2141,Late delivery,True
+8679,Damaged or leaking packaging,True
 11161,"App, account or location",False
-1894,"Expired, rotten or poor quality",False
+1894,"Expired, rotten or poor quality",True
 1694,"App, account or location",False
 372,"App, account or location",False
-5382,Damaged or leaking packaging,False
+5382,Damaged or leaking packaging,True
 4784,Generic complaint,False
-2238,"Expired, rotten or poor quality",False
+2238,"Expired, rotten or poor quality",True
 1172,Delivery partner behaviour,False
 5305,Prices and offers,False
 8612,Fees and charges,False
-9983,Missing or wrong items,False
-146,Missing or wrong items,False
+9983,Missing or wrong items,True
+146,Missing or wrong items,True
 830,Generic complaint,False
 7325,Prices and offers,False
 771,Late delivery,False
-5051,"Expired, rotten or poor quality",False
-9586,Missing or wrong items,False
-1732,"App, account or location",False
-3748,Missing or wrong items,False
+5051,"Expired, rotten or poor quality",True
+9586,Missing or wrong items,True
+1732,"App, account or location",True
+3748,Missing or wrong items,True
 438,Generic complaint,False
 1869,Order not delivered or cancelled,False
 2673,Damaged or leaking packaging,False
-2024,Missing or wrong items,False
+2024,Missing or wrong items,True
 4635,Generic complaint,False
-1887,Missing or wrong items,False
+1887,Missing or wrong items,True
 6484,Order not delivered or cancelled,False
 8992,Damaged or leaking packaging,False
 12124,Order not delivered or cancelled,False
 9091,Support and refunds,True
 3288,Missing or wrong items,False
 12033,Generic complaint,False
-7543,"Expired, rotten or poor quality",False
+7543,"Expired, rotten or poor quality",True
 7028,Delivery partner behaviour,False
 1850,Fees and charges,False
-1153,Generic complaint,False
+1153,Generic complaint,True
 12372,Fees and charges,False
 2150,Order not delivered or cancelled,False
-7222,Order not delivered or cancelled,False
+7222,Order not delivered or cancelled,True
 1410,"App, account or location",False
 10,"Expired, rotten or poor quality",False
 2094,Late delivery,False
 488,Late delivery,False
 1738,"Expired, rotten or poor quality",False
-3282,"Expired, rotten or poor quality",False
+3282,"Expired, rotten or poor quality",True

@@ -1,6 +1,6 @@
 Eval set: 100 hand-labelled complaint reviews (Zepto + Blinkit)
 Theme match rate:          81%
-Support-failed agreement:  63%
+Support-failed agreement:  100%
 'Missing or wrong items': precision 91% (11 labelled by Claude), recall 71% (14 labelled by you)
 
 Most common disagreements (you -> Claude):
