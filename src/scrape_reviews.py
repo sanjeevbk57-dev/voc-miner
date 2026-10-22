@@ -10,10 +10,11 @@ import pandas as pd
 # Instamart has no standalone Android app, so its reviews live inside the
 # main Swiggy app. We pull more Swiggy reviews and keep only Instamart ones.
 APPS = {
-    "Zepto":     {"pkg": "com.zeptoconsumerapp",    "count": 2000, "keywords": None},
-    "Blinkit":   {"pkg": "com.grofers.customerapp", "count": 2000, "keywords": None},
-    "Instamart": {"pkg": "in.swiggy.android",       "count": 15000,
-                  "keywords": r"instamart|grocer|vegetable|fruit|milk|dairy|atta"},
+    "Zepto":     {"pkg": "com.zeptoconsumerapp",    "count": 4000, "keywords": None},
+    "Blinkit":   {"pkg": "com.grofers.customerapp", "count": 4000, "keywords": None},
+    "Instamart": {"pkg": "in.swiggy.android",       "count": 40000,
+                  "keywords": r"insta ?mart|grocer|vegetable|fruit|milk|dairy|atta|"
+                              r"\begg|bread|onion|tomato|expired|rotten"},
 }
 
 rows = []
